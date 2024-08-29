@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Development') {
+            steps {
+                bat 'git clone https://github.com/riyasharma1408/Jenkins.git'
+            }
+        }
+        stage('UAT'){
+            steps{
+            bat '''echo hello > newtextfile3.txt
+git add .
+git config --global user.email "riyasharmaaa1704@gmail.com"
+git config --global user.name "riyasharma1408"
+git commit -m "push from Jenkins"
+
+            }
+        }
+    }
+}
